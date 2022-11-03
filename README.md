@@ -1,6 +1,6 @@
 # indeed-skill-scraper
 scrapes relevant words form Indeed job listings and returns the top 10 counts.
-Set ChromeDriver path variable for the Scraper object in main.py (ex. Scraper(driver_path="path to ChromeDriver.exe")), run main.py and simply follow the prompts.<br />
+Set ChromeDriver path variable for the Scraper object in the main call at the end of main.py (ex. main(r"path to ChromeDriver.exe")), run main.py and simply follow the prompts.<br />
 ![2022-11-01 16_44_16-Cmder](https://user-images.githubusercontent.com/71818162/199337942-b9ae15b9-caf9-4553-a040-db613e9d1d0d.png)
 
 
