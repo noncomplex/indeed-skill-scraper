@@ -37,7 +37,12 @@ def main(driver_path):
                 words = f.read().split()
 
             final_words = filter(lambda word: word not in words, final_words)
-        
+
+            ## these words not being filtered for some reason -
+            ## probably need to split on space only, but using this for now
+            apostrophe_words = ["You'll", "We'll", "We're"]
+            final_words = filter(lambda word: word not in apostrophe_words, final_words)
+            
             counter = collections.Counter(final_words).most_common()[:10]
             skill_rows = []
             for pair in counter:
@@ -51,7 +56,7 @@ def main(driver_path):
 
     except Exception as e:
         if 'in PATH' in str(e):
-            print('set driver_path to your Selenium drivers folder when creating Scraper()')
+            print('set driver_path to your Selenium drivers folder in the main() call')
 
 
 if __name__ == '__main__':

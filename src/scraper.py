@@ -9,6 +9,8 @@ import os
 import string
 import collections
 
+# The Scraper object inherits Selenium's Python webdriver; it offers
+# functions using the webdriver to scrape Indeed.com
 class Scraper(webdriver.Chrome):
     def __init__(self, driver_path=r'A:\SeleniumDrivers', teardown=False):
         # append path for this process
@@ -26,9 +28,14 @@ class Scraper(webdriver.Chrome):
         self.maximize_window()
 
     def search_job(self, what, where):
+        '''Opens the indeed URL with what and where filled.'''
         self.get(f'https://www.indeed.com/jobs?q={what}&l={where}')
 
     def get_job_descriptions(self, pages=3):
+        '''
+        Clicks on each individual job card and extracts the job description and returns
+        the words in a list.
+        '''
         job_descs = ''
         count = 0
         
