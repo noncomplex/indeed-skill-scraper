@@ -12,7 +12,7 @@ working with
 * ChromeDriver 106 (any suitable ChromeDriver with the appropriate chrome version should work)
 
 ## Note
-* site must be loaded and in active view
+* Site must be loaded and in active view
 * Occasionally will bug out and need to be ran again (data attribute not found, new tabs being opened)
 * Indeed's anti-scraping mechanisms may kick in
 * Takes a few minutes to scrape a few pages
