@@ -32,8 +32,7 @@ class Scraper(webdriver.Chrome):
         self.get(f'https://www.indeed.com/jobs?q={what}&l={where}')
 
     def get_job_descriptions(self, pages=3):
-        '''
-        Clicks on each individual job card and extracts the job description and returns
+        '''Clicks on each individual job card and extracts the job description and returns
         the words in a list.
         '''
         job_descs = ''
@@ -64,8 +63,9 @@ class Scraper(webdriver.Chrome):
                 By.CSS_SELECTOR, 'a[data-testid="pagination-page-next"]')
             next_page_div.click()
             
-        job_descs = job_descs.translate(str.maketrans('', '', string.punctuation))        
+        # job_descs = job_descs.translate(str.maketrans('', '', string.punctuation))
         job_descs = job_descs.split()
+        job_descs = [x for x in job_descs if ("," not in x) and (":" not in x) and ("." not in x)]
         
         return job_descs
             

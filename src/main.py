@@ -38,8 +38,7 @@ def main(driver_path):
 
             final_words = filter(lambda word: word not in words, final_words)
 
-            ## these words not being filtered for some reason -
-            ## probably need to split on space only, but using this for now
+            ## these words not being filtered for some reason
             apostrophe_words = ["You'll", "We'll", "We're"]
             final_words = filter(lambda word: word not in apostrophe_words, final_words)
             
@@ -57,6 +56,8 @@ def main(driver_path):
     except Exception as e:
         if 'in PATH' in str(e):
             print('set driver_path to your Selenium drivers folder in the main() call')
+        else:
+            print(e)
 
 
 if __name__ == '__main__':
